@@ -7,7 +7,7 @@ import { generateSequenceWithMissingNumbers } from "@/helpers/functions/generate
 import { FormEvent, useState } from "react";
 
 export default function Home() {
-  const [sequenceLength, setSequenceLength] = useState(10000);
+  const [sequenceLength, setSequenceLength] = useState<number | string>(10000);
   const [timeBruteForce, setTimeBruteForce] = useState<number | null>(null);
   const [timeBinarySearch, setTimeBinarySearch] = useState<number | null>(null);
   const [resultBruteForse, setResultBruteForse] = useState<string | null>(null);
@@ -17,7 +17,8 @@ export default function Home() {
 
   const handleSubmitForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!sequenceLength) return setSequenceLength(0);
+
+    if (!sequenceLength || typeof sequenceLength !== "number") return setSequenceLength(0);
 
     const randomNumberFirst = generateRandomNumber(sequenceLength);
     const randomNumberSecond = generateRandomNumber(sequenceLength, [randomNumberFirst]);
