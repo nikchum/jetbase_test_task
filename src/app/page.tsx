@@ -17,6 +17,7 @@ export default function Home() {
 
   const handleSubmitForm = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!sequenceLength) return setSequenceLength(0);
 
     const randomNumberFirst = generateRandomNumber(sequenceLength);
     const randomNumberSecond = generateRandomNumber(sequenceLength, [randomNumberFirst]);
@@ -78,7 +79,7 @@ export default function Home() {
           <div className="mt-5">
             <p className="font-semibold text-xl">Binary Search Method:</p>
             <p>
-              <span className="font-medium">Сomputational complexity:</span> O(n + log n)
+              <span className="font-medium">Сomputational complexity:</span> O(n)
             </p>
             <p>
               <span className="font-medium">Result:</span> [ {resultBinarySearch} ]

@@ -3,7 +3,9 @@ export const findMissingNumbersWithBruteForce = (sequenceArray: number[], sequen
     throw new Error("Invalid data type");
   }
 
-  if (sequenceArray.length === 0) return [1, 2];
+  if (!sequenceArray.length) {
+    return [1, 2];
+  }
 
   const missingNumbers = [];
 
