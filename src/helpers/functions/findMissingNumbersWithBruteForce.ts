@@ -27,6 +27,9 @@ export const findMissingNumbersWithBruteForce = (sequenceArray: number[], sequen
 
     if (!isEqual) {
       missingNumbers.push(count);
+
+      if (sequenceArray[i] !== count + 1) continue;
+
       count++;
     }
   }
