@@ -9,12 +9,12 @@ export const findMissingNumbersBinarySearch = (sequenceArray: number[]) => {
 
   let low = 0;
   let high = sequenceArray.length - 1;
-  let sum = sequenceArray.reduce((a, b) => a + b, 0);
-  let n = sequenceArray.length + 2;
-  let gaussSum = (n * (n + 1)) / 2;
+  const sum = sequenceArray.reduce((a, b) => a + b, 0);
+  const n = sequenceArray.length + 2;
+  const gaussSum = (n * (n + 1)) / 2;
 
   while (low <= high) {
-    let mid = Math.floor((low + high) / 2);
+    const mid = Math.floor((low + high) / 2);
 
     if (sequenceArray[mid] !== mid + 1) {
       high = mid - 1;
@@ -23,8 +23,8 @@ export const findMissingNumbersBinarySearch = (sequenceArray: number[]) => {
     }
   }
 
-  let missing1 = low + 1;
-  let missing2 = gaussSum - sum - missing1;
+  const missing1 = low + 1;
+  const missing2 = gaussSum - sum - missing1;
 
   return [missing1, missing2];
 };

@@ -33,9 +33,9 @@ export default function Home() {
     setSequence(sequence.join(", "));
     console.log("sequence ==> ", sequence);
 
-    let timeStartBruteForce = performance.now();
+    const timeStartBruteForce = performance.now();
     const missingNumbersBruteForse = findMissingNumbersWithBruteForce(sequence, sequenceLength);
-    let timeEndBruteForce = performance.now();
+    const timeEndBruteForce = performance.now();
 
     setTimeBruteForce(timeEndBruteForce - timeStartBruteForce);
 
